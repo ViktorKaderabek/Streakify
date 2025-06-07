@@ -17,17 +17,18 @@ interface UseCaseNoResult<in I : Any> {
 
 suspend inline fun <T : Any> withUseCaseContext(
     context: CoroutineContext = Dispatchers.Default,
-    crossinline block: suspend CoroutineScope.() -> Result<T>
-): Result<T> {
-    return withContext(context) {
+    crossinline block: suspend CoroutineScope.() -> Result<T>,
+): Result<T> =
+    withContext(context) {
         try {
             block()
         } catch (e: Exception) {
             Result.Error(error = UnhandledExceptionError(e.message))
         }
     }
-}
 
 class UnhandledExceptionError
-@PublishedApi
-internal constructor(message: String?) : ErrorResult(message = message)
+    @PublishedApi
+    internal constructor(
+        message: String?,
+    ) : ErrorResult(message = message)

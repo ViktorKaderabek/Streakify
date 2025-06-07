@@ -1,11 +1,13 @@
-package cz.streakify.streakify.presentation.vm
+package cz.streakify.streakify.features.vm
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
-abstract class BaseIntentViewModel<S : VmState, I : VmIntent>(state: S) : ViewModel() {
+abstract class BaseIntentViewModel<S : VmState, I : VmIntent>(
+    state: S,
+) : ViewModel() {
     var state = mutableStateOf(state)
         protected set
 

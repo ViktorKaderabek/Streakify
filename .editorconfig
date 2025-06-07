@@ -1,0 +1,19 @@
+# https://editorconfig.org
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*.{kt,kts}]
+ij_kotlin_imports_layout = *,java.**,javax.**,kotlin.**,^
+
+ktlint_code_style = ktlint_official
+ktlint_standard_filename = disabled
+ktlint_standard_property-naming = disabled
+ktlint_standard_multiline-expression-wrapping = disabled
+ktlint_standard_string-template-indent = disabled
+ktlint_standard_function-naming = disabled
+
+ktlint_compose_modifier-composable-check = disabled
+ktlint_compose_modifier-composed-check = disabled
+ktlint_compose_compositionlocal-allowlist = disabled
+ktlint_compose_vm-forwarding-check = disabled
+
