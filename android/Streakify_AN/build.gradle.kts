@@ -2,6 +2,16 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.compose.compiler)
+
+    // Lint
+    alias(libs.plugins.ktlint)
+    alias(libs.plugins.detekt)
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
 }
 
 android {
@@ -37,10 +47,13 @@ android {
 }
 
 dependencies {
+    // Shared
     implementation(projects.shared)
+
+    // Compose
+    implementation(libs.androidx.activity.compose)
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
-    implementation(libs.androidx.activity.compose)
     debugImplementation(libs.compose.ui.tooling)
 }

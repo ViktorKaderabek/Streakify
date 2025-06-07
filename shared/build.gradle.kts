@@ -3,6 +3,12 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.composeMultiplatform)
+
+    // Lint
+    alias(libs.plugins.ktlint)
+    alias(libs.plugins.detekt)
 }
 
 kotlin {
@@ -15,20 +21,36 @@ kotlin {
             }
         }
     }
-    
+
     listOf(
         iosArm64(),
-        iosSimulatorArm64()
+        iosSimulatorArm64(),
     ).forEach { target ->
         target.binaries.framework {
-            baseName = "KMMSharedDomain"
+            baseName = "shared"
             isStatic = true
         }
     }
 
     sourceSets {
+        commonMain.dependencies {
+            // Compose
+            implementation(libs.compose.ui)
+            implementation(libs.compose.ui)
+            implementation(libs.compose.runtime)
+            implementation(libs.compose.material)
+            implementation(libs.compose.foundation)
+
+            // Koin
+            api(libs.koin.core)
+        }
+
         androidMain.dependencies {
+            // Compose
             implementation(libs.androidx.activity.compose)
+
+            // Koin
+            api(libs.koin.android)
         }
     }
 }

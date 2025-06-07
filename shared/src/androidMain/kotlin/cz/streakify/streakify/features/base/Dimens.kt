@@ -1,4 +1,4 @@
-package cz.streakify.streakify.presentation.base
+package cz.streakify.streakify.features.base
 
 import androidx.compose.ui.unit.dp
 
