@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "699308456068",
+    "project_id": "streakify-14c89",
+    "storage_bucket": "streakify-14c89.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699308456068:android:b1a96024c2467dd0cf6ad1",
+        "android_client_info": {
+          "package_name": "cz.streakify.streakify.android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDs-OAzpA92zM5AIyX4NWYg1oJqiKcc3dk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

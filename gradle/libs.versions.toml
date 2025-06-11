@@ -4,15 +4,18 @@ androidx-activityCompose = "1.10.1"
 appcompat = "1.7.1"
 compose = "1.8.2"
 compose-material3 = "1.3.2"
-composeMultiPlatform = "1.8.1"
+compose-multiplatform = "1.8.1"
 coreKtx = "1.16.0"
 espressoCore = "3.6.1"
 junit = "4.13.2"
-junitVersion = "1.2.1"
+junit-version = "1.2.1"
 koin = "4.0.2"
 kotlin = "2.1.21"
 ktlint = "13.0.0-rc.1"
-detekt = "1.23.6"
+detekt = "1.23.8"
+bom = "33.15.0"
+firebase-analytics = "22.4.0"
+google-services = "4.4.2"
 
 [libraries]
 # AndroidX
@@ -21,11 +24,11 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 
 # Compose
-compose-foundation = { group = "org.jetbrains.compose.foundation", name = "foundation", version.ref = "composeMultiPlatform" }
-compose-material = { group = "org.jetbrains.compose.material", name = "material", version.ref = "composeMultiPlatform" }
+compose-foundation = { group = "org.jetbrains.compose.foundation", name = "foundation", version.ref = "compose-multiplatform" }
+compose-material = { group = "org.jetbrains.compose.material", name = "material", version.ref = "compose-multiplatform" }
 compose-material3 = { module = "androidx.compose.material3:material3", version.ref = "compose-material3" }
-compose-runtime = { group = "org.jetbrains.compose.runtime", name = "runtime", version.ref = "composeMultiPlatform" }
-compose-ui = { group = "org.jetbrains.compose.ui", name = "ui", version.ref = "composeMultiPlatform" }
+compose-runtime = { group = "org.jetbrains.compose.runtime", name = "runtime", version.ref = "compose-multiplatform" }
+compose-ui = { group = "org.jetbrains.compose.ui", name = "ui", version.ref = "compose-multiplatform" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
 
@@ -35,17 +38,21 @@ koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin"
 
 # Tests
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junit-version" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 
+# Firebase
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "bom" }
+firebase-sdk = { module = "com.google.firebase:firebase-analytics", version.ref = "firebase-analytics" }
 
 [plugins]
-androidApplication = { id = "com.android.application", version.ref = "agp" }
-androidLibrary = { id = "com.android.library", version.ref = "agp" }
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiPlatform" }
-kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+google-services = {id = "com.google.gms.google-services", version.ref = "google-services" }
 
 # Lint
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
