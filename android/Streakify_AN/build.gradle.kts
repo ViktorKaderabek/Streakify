@@ -1,11 +1,14 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
     alias(libs.plugins.compose.compiler)
 
     // Lint
     alias(libs.plugins.ktlint)
     alias(libs.plugins.detekt)
+
+    // Firebase
+    alias(libs.plugins.google.services)
 }
 
 buildscript {
@@ -56,4 +59,8 @@ dependencies {
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
     debugImplementation(libs.compose.ui.tooling)
+
+    // Firebase
+    implementation(libs.firebase.bom)
+    implementation(libs.firebase.sdk)
 }

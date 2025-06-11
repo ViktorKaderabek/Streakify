@@ -5,6 +5,6 @@ import org.koin.dsl.module
 
 expect val platformModule: Module
 
-val coreModule =
+internal val coreModule =
     module {
     }
